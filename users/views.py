@@ -3,6 +3,10 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.hashers import make_password, check_password  # For hashing and checking passwords
 from .models import User, Admin
 import json
+from rest_framework.views import APIView
+from rest_framework import status
+from .serializers import CustomUserSerializer
+
 
 # Create User
 @csrf_exempt
@@ -107,11 +111,6 @@ def login_admin(request):
 
     return JsonResponse({'error': 'Invalid request method'}, status=400)
 
-
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import status
-from .serializers import CustomUserSerializer
 
 class CreateUserView(APIView):
     def post(self, request):
