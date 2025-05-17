@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-0on20mp52(5-!55_)@aa=5tfr^vuvj8wex7#@&lq@_rxqqntji
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.100.217', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'backend-h4dv.onrender.com',  # your Render backend URL
+    'localhost',                  # for local development
+    '127.0.0.1',                  # also useful locally
+]
 
 
 
@@ -57,7 +61,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'myproject.urls'
 
 CORS_ALLOWED_ORIGINS = [
-    'http://192.168.100.217:8081',
+    'https://backend-h4dv.onrender.com',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True 
